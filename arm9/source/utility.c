@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 #define FLASH_START 0x00000000
-#define FLASH_END 0x01000000
+#define FLASH_END 0x02000000
 
 // Helpers
 
