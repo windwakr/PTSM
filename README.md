@@ -1,3 +1,5 @@
+**Note: This has been modified to only dump save files for Kuruma de DS**
+
 # PTSM
 
 Homebrew for dumping and restoring savegames for Learn With Pokémon: Typing Adventure. Additionally you can dump the content of the flash chip inside the cartridge, or test the bluetooth chip.

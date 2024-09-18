@@ -2,23 +2,8 @@
 
 #define GAME_CODE_EMPTY "\x00\x00\x00\x00"
 
-#define GAME_CODE_JPN "UZPJ"
-#define GAME_TITLE_JPN "TEXASJP"
-
-#define GAME_CODE_ITA "UZPI"
-#define GAME_TITLE_ITA "TEXASIT"
-
-#define GAME_CODE_ENG "UZPP"
-#define GAME_TITLE_ENG "TEXASUK"
-
-#define GAME_CODE_SPA "UZPS"
-#define GAME_TITLE_SPA "TEXASSP"
-
-#define GAME_CODE_GER "UZPD"
-#define GAME_TITLE_GER "TEXASGE"
-
-#define GAME_CODE_FRA "UZPF"
-#define GAME_TITLE_FRA "TEXASFR"
+#define GAME_CODE_JPN "UZCJ"
+#define GAME_TITLE_JPN "KURUMADEDS"
 
 // Globals
 
@@ -29,15 +14,10 @@ volatile bool g_HasTriggeredIRQ = false;
 static BTRegion getGameRegion(u8 const *header) {
 #define REGION_CASE(r)                                                         \
   if (!memcmp(header + 0x0C, GAME_CODE_##r, 4) &&                              \
-      !memcmp(header, GAME_TITLE_##r, 7))                                      \
+      !memcmp(header, GAME_TITLE_##r, 10))                                      \
   return BTRegion_##r
 
   REGION_CASE(JPN);
-  REGION_CASE(ITA);
-  REGION_CASE(ENG);
-  REGION_CASE(SPA);
-  REGION_CASE(GER);
-  REGION_CASE(FRA);
 
   return BTRegion_Unknown;
 }
